@@ -34,7 +34,7 @@ In addition, two enhancements are present:
 - `from` can be set intead of `from_email` and `from_name`:
 
   ```js
-  email({ from: 'Guillermo Rauch <rauchg@gmail.com> });
+  email({ from: 'Guillermo Rauch <rauchg@gmail.com>' });
   ```
 
 - `to` can be expressed as an array of emails:
