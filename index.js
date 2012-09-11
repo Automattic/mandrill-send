@@ -48,7 +48,7 @@ function create(key){
     }
 
     // process `to`
-    if ('string' == typeof opts.to) opts.to = [opts.to];
+    if (!Array.isArray(opts.to)) opts.to = [opts.to];
     if (opts.to) {
       opts.to = opts.to.map(function(email){
         return 'string' == typeof email ? parse(email) : email;
