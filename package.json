@@ -1,7 +1,7 @@
 {
   "name": "mandrill-send",
   "description": "simple mandrill email sender",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
     "superagent": "~0.6.0",
     "debug": "*"
