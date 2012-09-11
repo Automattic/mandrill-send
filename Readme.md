@@ -9,7 +9,7 @@ Dead-simple mandrill API implementation. Only sends emails.
 var email = require('mandrill-send')('your-api-key');
 email({
   from: 'Guillermo Rauch <rauchg@gmail.com>',
-  to: ['a@b.com', 'c@d.com']
+  to: ['a@b.com', 'c@d.com', { name: 'Guillermo', email: 'guiller@mo.com' }]
 }, function(err){
   if (err) console.error(err);
 });
