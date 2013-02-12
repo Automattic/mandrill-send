@@ -1,6 +1,8 @@
 
 # mandrill
 
+[![Build Status](https://secure.travis-ci.org/LearnBoost/mandrill-send.png)](http://travis-ci.org/LearnBoost/mandrill-send)
+
 Dead-simple mandrill API implementation. Only sends emails.
 
 ## How to use
