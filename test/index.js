@@ -10,17 +10,16 @@ var mandrill = require('../')
 /**
  * Create Mandill-send instance
  */
-
 var email = mandrill(config.key);
 
 describe('send a simple email', function(){
   it('expect not `null` response', function(done){
 
     email({
-      from: 'Rosepad <damian@rosepad.com>',
+      from: 'From <from@email.com>',
       to: [
-        'rdsuarez@gmail.com',
-        { name: 'Dami', email: 'damian.suarez@xifox.net' }
+        'to@email.com',
+        { name: 'The other guy', email: 'the.other.guy@email.net' }
       ],
       subject: 'Testing signup',
       tags: ['signup', 'welcome']
