@@ -3,8 +3,8 @@
  * Module dependencies.
  */
 
-var request = require('superagent')
-  , debug = require('debug')('mandrill');
+var request = require('superagent');
+var debug = require('debug')('mandrill');
 
 /**
  * Module exports.
