@@ -10,7 +10,13 @@ var debug = require('debug')('mandrill');
  * Module exports.
  */
 
-module.exports = create;
+module.exports = exports = create;
+
+/**
+ * Make transport overrideable.
+ */
+
+exports.request = request;
 
 /**
  * Create client.
@@ -71,7 +77,7 @@ function create(key){
 
 function send(key, message, fn){
   debug('sending message %j with api key "%s"', message, key);
-  request
+  exports.request
     .post('https://mandrillapp.com/api/1.0/messages/send.json')
     .send({ key: key, message: message })
     .end(function(err, res){
