@@ -62,10 +62,10 @@ function create(key){
     }
 
     send(key, opts, fn);
-  };
+  }
 
   return email;
-};
+}
 
 /**
  * Sends a message through the mandrill API.
@@ -77,20 +77,21 @@ function create(key){
 
 function send(key, message, fn){
   debug('sending message %j with api key "%s"', message, key);
+  var url = 'https://mandrillapp.com/api/1.0/messages/send.json';
   exports.request
-    .post('https://mandrillapp.com/api/1.0/messages/send.json')
-    .send({ key: key, message: message })
-    .end(function(err, res){
-      if (err) return fn(err);
-      if (res.ok) {
-        fn(null, res.body.return);
-      } else {
-        var err = new Error('Mandrill response status ' + res.status);
-        err.data = res.body;
-        fn(err);
-      }
-    });
-};
+  .post(url)
+  .send({ key: key, message: message })
+  .end(function(err, res){
+    if (err) return fn(err);
+    if (res.ok) {
+      fn(null, res.body.return);
+    } else {
+      var err = new Error('Mandrill response status ' + res.status);
+      err.data = res.body;
+      fn(err);
+    }
+  });
+}
 
 /**
  * Parses "A B <c@d.com>" into mandrill {email,name} format.
@@ -107,7 +108,7 @@ function parse(email){
   } else {
     return { email: email };
   }
-};
+}
 
 /**
  * Placeholder callback.
@@ -118,4 +119,4 @@ function parse(email){
 
 function empty (err) {
   if (err) return console.error(err.stack || err);
-};
+}
