@@ -13,7 +13,7 @@ var mandrill = require('../')
 var email = mandrill(config.key);
 
 describe('send a simple email', function(){
-  it('expect not `null` response', function(done){
+  it('expect `null` error response', function(done){
 
     email({
       from: 'From <from@email.com>',
