@@ -3,7 +3,7 @@
   "description": "simple mandrill email sender",
   "version": "0.0.2",
   "dependencies": {
-    "superagent": "~0.6.0",
+    "superagent": "0.12.4",
     "debug": "*"
   }
 }
