@@ -7,5 +7,4 @@ test:
 		--bail \
 		--reporter spec
 
-
 .PHONY: test
