@@ -56,10 +56,10 @@ function create(key){
     }
 
     send(key, opts, fn);
-  };
+  }
 
   return email;
-};
+}
 
 /**
  * Sends a message through the mandrill API.
@@ -84,7 +84,7 @@ function send(key, message, fn){
         fn(err);
       }
     });
-};
+}
 
 /**
  * Parses "A B <c@d.com>" into mandrill {email,name} format.
@@ -101,7 +101,7 @@ function parse(email){
   } else {
     return { email: email };
   }
-};
+}
 
 /**
  * Placeholder callback.
@@ -112,4 +112,4 @@ function parse(email){
 
 function empty (err) {
   if (err) return console.error(err.stack || err);
-};
+}
