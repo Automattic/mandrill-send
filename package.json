@@ -2,12 +2,13 @@
   "name": "mandrill-send",
   "description": "simple mandrill email sender",
   "version": "0.0.2",
-  "devDependencies": {
-    "mocha": "*",
-    "should": "*"
-  },
   "dependencies": {
     "superagent": "~0.6.0",
     "debug": "*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*",
+    "expect.js": "*"
   }
 }
