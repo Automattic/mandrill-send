@@ -55,11 +55,7 @@ function create(key){
 
     // process `to`
     if (!Array.isArray(opts.to)) opts.to = [opts.to];
-    if (opts.to) {
-      opts.to = opts.to.map(function(email){
-        return 'string' == typeof email ? parse(email) : email;
-      });
-    }
+    if (opts.to) opts.to = opts.to.map(parse);
 
     send(key, opts, fn);
   }
@@ -96,13 +92,15 @@ function send(key, message, fn){
 /**
  * Parses "A B <c@d.com>" into mandrill {email,name} format.
  *
- * @param {String} email
+ * @param {Object|String} email
  * @return {Object}
  * @api private
  */
 
 function parse(email){
-  if (~email.indexOf('<')) {
+  if ('object' == typeof email) {
+    return email;
+  } else if (~email.indexOf('<')) {
     var match = email.match(/(.*) <([^>]+)>/);
     return { name: match[1], email: match[2] };
   } else {
