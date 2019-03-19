@@ -1,4 +1,5 @@
 
+# This repository is no longer maintained
 # mandrill
 
 [![Build Status](https://secure.travis-ci.org/LearnBoost/mandrill-send.png)](http://travis-ci.org/LearnBoost/mandrill-send)
